@@ -1,0 +1,9 @@
+/* Google Map! */
+#map {
+    height: 645px;
+    width: 645px;
+}
+
+#div.panel-body{
+  background-color: blue;
+}
