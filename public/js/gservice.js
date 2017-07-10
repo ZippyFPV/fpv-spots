@@ -59,10 +59,9 @@ angular.module('gservice', [])
 
                 // Create popup windows for each record
                 var  contentString =
-                    '<p><b>Username</b>: ' + user.username +
-                    '<br><b>Age</b>: ' + user.age +
-                    '<br><b>Gender</b>: ' + user.gender +
-                    '<br><b>Favorite Language</b>: ' + user.favlang +
+                    '<p><b>Pilot</b>: ' + user.pilot +
+                    '<br><b>Safe?</b>: ' + user.safe +
+                    '<br><b>Video URL:</b>: ' + user.url +
                     '</p>';
 
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
@@ -72,10 +71,9 @@ angular.module('gservice', [])
                         content: contentString,
                         maxWidth: 320
                     }),
-                    username: user.username,
-                    gender: user.gender,
-                    age: user.age,
-                    favlang: user.favlang
+                    pilot: user.pilot,
+                    safe: user.safe,
+                    url: user.url
             });
         }
         // location is now an array populated with records in Google Maps format
@@ -104,7 +102,8 @@ var initialize = function(latitude, longitude) {
             position: n.latlon,
             map: map,
             title: "Big Map",
-            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            animation: google.maps.Animation.DROP,
+            icon: "../images/Mobile.png",
         });
 
         // For each marker created, add a listener that checks for clicks
