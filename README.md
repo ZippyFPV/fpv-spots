@@ -1,2 +1,4 @@
 # fpv-spots
-FPV spot display 
+FPV spot display
+
+by Benjamin Tovar
