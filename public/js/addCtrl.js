@@ -1,6 +1,6 @@
 // Creates the addCtrl Module and Controller. Note that it depends on the 'geolocation' module and service.
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
-addCtrl.controller('addCtrl', function($scope, $http, geolocation, gservice){
+addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice){
 
     // Initializes Variables
     // ----------------------------------------------------------------------------
@@ -8,7 +8,7 @@ addCtrl.controller('addCtrl', function($scope, $http, geolocation, gservice){
     var coords = {};
     var lat = 0;
     var long = 0;
-    
+
 
     // Set initial coordinates to the center of the US
     $scope.formData.latitude = 39.500;
@@ -16,6 +16,29 @@ addCtrl.controller('addCtrl', function($scope, $http, geolocation, gservice){
 
     // Functions
     // ----------------------------------------------------------------------------
+    // Get coordinates based on mouse click. When a click event is detected....
+    $rootScope.$on("clicked", function(){
+
+        // Run the gservice functions associated with identifying coordinates
+        $scope.$apply(function(){
+            $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
+            $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
+            $scope.formData.htmlverified = "Nope (Thanks for spamming my map...)";
+        });
+    });
+
+
+    // Get coordinates based on mouse click. When a click event is detected....
+    $rootScope.$on("clicked", function(){
+
+        // Run the gservice functions associated with identifying coordinates
+        $scope.$apply(function(){
+            $scope.formData.latitude = parseFloat(gservice.clickLat).toFixed(3);
+            $scope.formData.longitude = parseFloat(gservice.clickLong).toFixed(3);
+            $scope.formData.htmlverified = "Nope (Thanks for spamming my map...)";
+        });
+    });
+
     // Creates a new user based on the form fields
     $scope.createUser = function() {
 
