@@ -1,6 +1,8 @@
 /* Google Map! */
 #map {
-    height: 735px;
-    width: 1300px;
-
+  height: 700px;
+   overflow: hidden;
+   padding-bottom: 22.25%;
+   padding-top: 30px;
+   position: relative;
 }

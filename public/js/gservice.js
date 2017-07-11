@@ -116,9 +116,6 @@ var initialize = function(latitude, longitude) {
         });
     });
 
-    //resize
-    google.maps.event.trigger(map, 'resize')
-
     // Set initial location as a bouncing red marker
     var initialLocation = new google.maps.LatLng(latitude, longitude);
     var marker = new google.maps.Marker({
