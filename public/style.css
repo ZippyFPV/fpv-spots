@@ -1,8 +1,17 @@
 /* Google Map! */
 #map {
-  height: 700px;
+  height: 600px;
    overflow: hidden;
    padding-bottom: 22.25%;
    padding-top: 30px;
-   position: relative;
+   position: auto ;
+}
+
+
+#html-body {
+    background-color: white;
+}
+
+.header {
+  background-color: aqua;
 }

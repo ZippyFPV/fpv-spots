@@ -25,13 +25,14 @@
 
 </head>
 <body ng-controller="addCtrl">
-
-    <div class="header">
+  <div class="container-fluid">
+    <div class="header" id="header">
         <ul class="nav nav-pills pull-right">
             <li active><a href="">Pilots</a></li>
             <li disabled><a href="">Gallery</a></li>
         </ul>
-        <h3 class="text-muted">FPV-SPOTS</h3>
+        <!-- <h1>FPV-SPOTS</h1> -->
+        <a href="/"><img src="images/FPV-SPOTS.svg" alt=""></a>
     </div>
     <!-- Map and Side Panel -->
     <div class="row content">
@@ -44,8 +45,8 @@
       </div>
 
         <!-- Side Panel -->
-        <div class="col-lg-3">
-            <div class="panel panel-default">
+        <div class="col-lg-3" id="form-panel">
+            <div class="panel panel-default" >
                 <!-- Panel Title -->
                 <div class="panel-heading">
                     <h2 class="panel-title text-center">STAKE YOUR MARK! <span class="glyphicon glyphicon-map-marker"></span></h2>
@@ -100,21 +101,20 @@
                         </div>
                         <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
                         <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>                    </form>
-                        <br>  </br>
-                        <br>  </br>
-                        <br>  </br>
+
+                        <div class="footer">
+                            <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Benjamin Tovar -
+                                <a href="https://www.linkedin.com/in/benjamin-tovar/">LinkedIn</a> | <a href="https://github.com/ZippyFPV/fpv-spots">Github Repo</a></p>
+                        </div>
 
                 </div>
             </div>
         </div>
-    </d
-    <br>  </br>
-    <div class="footer">
-        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Benjamin Tovar -
-            <a href="https://www.linkedin.com/in/benjamin-tovar/">LinkedIn</a> | <a href="https://github.com/ZippyFPV/fpv-spots">Github Repo</a></p>
-    </div>
 
 
+
+
+</div>
 </div>
 </body>
 </html>

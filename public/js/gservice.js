@@ -59,9 +59,9 @@ angular.module('gservice', [])
 
                 // Create popup windows for each record
                 var  contentString =
-                    `<p><b>Pilot</b>:${user.pilot}
-                     <br><b>Safe?</b>:${user.safe}
-                    <br><b>Video of Location:</b><a target="_blank" href =${user.url}>Video</a></p>`
+                    `<p><b>Pilot :</b>${user.pilot}
+                     <br><br><b>Safe? :</b>${user.safe}
+                    <br><br><b>Video: </b><a target="_blank" href =${user.url}>Link </a></p>`
                 console.log(contentString);
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({
@@ -90,7 +90,7 @@ var initialize = function(latitude, longitude) {
 
         // Create a new map and place in the index.html page
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
+            zoom: 5,
             center: myLatLng
 
         });
@@ -103,7 +103,7 @@ var initialize = function(latitude, longitude) {
             map: map,
             title: "Big Map",
             animation: google.maps.Animation.DROP,
-            icon: "../images/Mobile.png",
+            icon: "../images/Mobile.svg",
         });
 
         // For each marker created, add a listener that checks for clicks
