@@ -62,7 +62,7 @@ angular.module('gservice', [])
                     `<p><b>Pilot :</b>${user.pilot}
                      <br><br><b>Safe? :</b>${user.safe}
                     <br><br><b>Video: </b><a target="_blank" href =${user.url}>Link </a></p>`
-                console.log(contentString);
+
                 // Converts each of the JSON records into Google Maps Location format (Note [Lat, Lng] format).
                 locations.push({
                     latlon: new google.maps.LatLng(user.location[1], user.location[0]),
@@ -122,7 +122,7 @@ var initialize = function(latitude, longitude) {
         position: initialLocation,
         animation: google.maps.Animation.BOUNCE,
         map: map,
-        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+        icon: "../images/Flag.svg"
     });
     lastMarker = marker;
 
@@ -135,7 +135,7 @@ var initialize = function(latitude, longitude) {
         position: e.latLng,
         animation: google.maps.Animation.BOUNCE,
         map: map,
-        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+        icon: "../images/Flag.svg"
     });
 
     // When a new spot is selected, delete the old red bouncing marker

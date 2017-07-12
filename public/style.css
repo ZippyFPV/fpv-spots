@@ -1,6 +1,6 @@
 /* Google Map! */
 #map {
-  height: 600px;
+  height: 670px;
    overflow: hidden;
    padding-bottom: 22.25%;
    padding-top: 30px;
@@ -13,5 +13,12 @@
 }
 
 .header {
-  background-color: aqua;
+  background-color: #97E8D9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+#a {
+  background-color: blue;
 }

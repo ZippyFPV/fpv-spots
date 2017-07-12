@@ -25,96 +25,88 @@
 
 </head>
 <body ng-controller="addCtrl">
-  <div class="container-fluid">
-    <div class="header" id="header">
-        <ul class="nav nav-pills pull-right">
-            <li active><a href="">Pilots</a></li>
-            <li disabled><a href="">Gallery</a></li>
-        </ul>
-        <!-- <h1>FPV-SPOTS</h1> -->
-        <a href="/"><img src="images/FPV-SPOTS.svg" alt=""></a>
-    </div>
-    <!-- Map and Side Panel -->
-    <div class="row content">
 
-      <!-- Google Map -->
-      <div class="col-lg-9">
-        <div class="panel panel-body">
-        <div id="map"></div>
+        <div class="header" id="header">
+            <ul class="nav nav-pills pull-right">
+                <li active><a href="">Pilots</a></li>
+                <li disabled><a href="">Gallery</a></li>
+            </ul>
+            <!-- <h1>FPV-SPOTS</h1> -->
+            <a href="/"><img src="images/DesktopHD.svg" alt=""></a>
         </div>
-      </div>
+        <!-- Map and Side Panel -->
+        <div class="row content">
 
-        <!-- Side Panel -->
-        <div class="col-lg-3" id="form-panel">
-            <div class="panel panel-default" >
-                <!-- Panel Title -->
-                <div class="panel-heading">
-                    <h2 class="panel-title text-center">STAKE YOUR MARK! <span class="glyphicon glyphicon-map-marker"></span></h2>
-                </div>
-                <!-- Panel Body -->
-                <div class="panel-body">
-                    <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
-                    <form name ="addForm" novalidate>
-                        <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
-                        <div class="form-group">
-                            <label for="pilot">Pilot <span class="badge">All fields required</span></label>
-                            <input type="text" class="form-control" id="pilot" placeholder="ZIPPY" ng-model="formData.pilot" required>
-                        </div>
+          <!-- Google Map -->
+          <div class="col-lg-9">
+            <div id="map"></div>
+          </div>
 
-                        <div class="form-group">
-                          <label for="url">Video URL of location</label>
-                          <input type="text" class="form-control" id="url" placeholder="URL" ng-model="formData.url" required>
-                        </div>
+          <!-- Side Panel -->
+          <div class="col-lg-3" >
+                  <!-- Panel Title -->
+                  <div class="panel-heading">
+                      <h2 class="panel-title text-center">STAKE YOUR MARK! <span class="glyphicon glyphicon-map-marker"></span></h2>
+                  </div>
+                  <!-- Panel Body -->
+                  <div class="panel-body">
+                      <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+                      <form name ="addForm" novalidate>
+                          <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                          <div class="form-group">
+                              <label for="pilot">Pilot <span class="badge">All fields required</span></label>
+                              <input type="text" class="form-control" id="pilot" placeholder="Zippy" ng-model="formData.pilot" required>
+                          </div>
 
-                        <label class="radio control-label">Safe</label>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="radioyes" value="Yes" ng-model="formData.safe">
-                                Yes
-                            </label>
-                        </div>
+                          <div class="form-group">
+                            <label for="url">Video URL of location</label>
+                            <input type="text" class="form-control" id="url" placeholder="Video URL of location" ng-model="formData.url" required>
+                          </div>
 
-                        <div class="radio" required>
-                            <label>
-                                <input type="radio" name="optionsRadios" id="radiono" value="No" ng-model="formData.safe">
-                                No
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" ng-model="formData.safe">
-                                What's it to ya?
-                            </label>
-                        </div>
+                          <label class="radio control-label">Safe</label>
+                          <div class="radio">
+                              <label>
+                                  <input type="radio" name="optionsRadios" id="radioyes" value="Yes" ng-model="formData.safe">
+                                  Yes
+                              </label>
+                          </div>
 
-                        <div class="form-group">
-                            <label for="latitude">Latitude</label>
-                            <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="longitude">Longitude</label>
-                            <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="verified">HTML5 Verified Location? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
-                            <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
-                        </div>
-                        <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                        <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>                    </form>
+                          <div class="radio" required>
+                              <label>
+                                  <input type="radio" name="optionsRadios" id="radiono" value="No" ng-model="formData.safe">
+                                  No
+                              </label>
+                          </div>
+                          <div class="radio">
+                              <label>
+                                  <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" ng-model="formData.safe">
+                                  What's it to ya?
+                              </label>
+                          </div>
 
-                        <div class="footer">
-                            <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Benjamin Tovar -
-                                <a href="https://www.linkedin.com/in/benjamin-tovar/">LinkedIn</a> | <a href="https://github.com/ZippyFPV/fpv-spots">Github Repo</a></p>
-                        </div>
+                          <div class="form-group">
+                              <label for="latitude">Latitude</label>
+                              <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                          </div>
+                          <div class="form-group">
+                              <label for="longitude">Longitude</label>
+                              <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+                          </div>
+                          <div class="form-group">
+                              <label for="verified">HTML5 Verified Location? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                              <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
+                          </div>
+                          <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                          <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>                    </form>
+<br></br>
+                          <div class="footer">
+                              <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by Benjamin Tovar -
+                                  <br></br>
+                                  <a target="_blank" href="http://www.zippymultirotors.com/">Buy my frame!</a> | <a target="_blank" href="https://www.linkedin.com/in/benjamin-tovar/">LinkedIn</a> | <a target="_blank" href="https://github.com/ZippyFPV/fpv-spots">Repo</a></p>
+                          </div>
+                  </div>
+          </div>
 
-                </div>
-            </div>
-        </div>
-
-
-
-
-</div>
 </div>
 </body>
 </html>
