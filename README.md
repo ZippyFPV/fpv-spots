@@ -3,11 +3,14 @@
 # What is FPV-SPOTS?
 I am an FPV drone pilot. I wanted to devise a way to log locations of flying spots that I visit. The idea is to have users create a profile and log locations that they have flown with a video url if applicable to show other users what the location looks like. I want this to be a social platform so users will be able to browse their favorite pilots and see their locations.
 
+# Why is this app useful?
+The FPV drone racing community is a tight knit group that prides itself on sharing knowledge and information.I wanted to facilitate this implementation to encourage sharing. There is an app out there now that allows you to create locations but it restricts you to having to do it while you are at the location itself. I don't like that. I want users to be able to curate and edit their footage and post something that is quality at the time of their choosing.
 
 # Accomplishments
 In the week that I worked on this project I have accomplished :
 
 - User can find their location on map and it finds the lat and long.
+
 - Form includes :
 
   Pilot Name
@@ -32,8 +35,6 @@ In the week that I worked on this project I have accomplished :
 
 - Added links to Github Repo, Zippymultirotors.com, and LinkedIn
 
-# Why is it useful?
-The FPV drone racing community is a tight knit group that prides itself on sharing knowledge and information.I wanted to facilitate this implementation to encourage sharing. There is an app out there now that allows you to create locations but it restricts you to having to do it while you are at the location itself. I don't like that. I want users to be able to curate and edit their footage and post something that is quality at the time of their choosing.
 
 # What features I will add?
 I plan on seeing this app all the way through to production. With that being said this is my todo for the next week.
@@ -52,16 +53,16 @@ I plan on seeing this app all the way through to production. With that being sai
 
 - Refactor layout to make it mobile friendly.
 
-# How To Test It Locally
 
-I just followed along with [THIS](https://github.com/TwilioDevEd/server-notifications-node) tutorial.
 
 # What Code I like
 
 ```bash
-cfg.accountSid = process.env.TWILIO_ACCOUNT_SID;
-cfg.authToken = process.env.TWILIO_AUTH_TOKEN;
-cfg.sendingNumber = process.env.TWILIO_NUMBER;
+// Create popup windows for each record
+var  contentString =
+    `<p><b>Pilot :</b>${user.pilot}
+     <br><br><b>Safe? :</b>${user.safe}
+    <br><br><b>Video: </b><a target="_blank" href =${user.url}> Link </a></p>`
 ```
 
 by Benjamin Tovar
